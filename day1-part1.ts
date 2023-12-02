@@ -22,7 +22,6 @@ function getNumber(line: string): number {
     }
   }
 
-  console.log(numberAsString);
   return Number.parseInt(numberAsString, 10);
 }
 

@@ -36,8 +36,6 @@ function getNumber(line: string): number {
   const firstMatch = line.match(firstRegex)![0];
   const lastMatch = reverseString(line).match(lastRegex)![0];
 
-  console.log({ line, firstMatch, lastMatch });
-
   return Number.parseInt(
     matchToNumericChar[firstMatch] +
       matchToNumericChar[reverseString(lastMatch)],
@@ -50,10 +48,6 @@ const file = readFileSync("./input/day1.txt", "utf-8");
 const sum = file
   .trim()
   .split("\n")
-  .map((l) => {
-    console.log(l, getNumber(l));
-    return l;
-  })
   .map((line) => getNumber(line))
   .reduce((prev, curr) => prev + curr, 0);
 console.log({ sum });
